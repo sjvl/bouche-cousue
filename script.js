@@ -69,7 +69,7 @@ document.addEventListener('keyup', function(event){
             }
             nextLetter = 0
         }else{
-            document.querySelector('#result').textContent = "Not enough letters !"
+            document.querySelector('#result').textContent = "Ça mancque de lettres par ici.."
         }
     }else if(event.key.match(/^[a-zA-ZÀ-ÿ]$/)){
         if(document.querySelector('#result').textContent === "Ça mancque de lettres par ici.."){
