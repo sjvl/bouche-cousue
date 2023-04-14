@@ -69,10 +69,10 @@ document.addEventListener('keyup', function(event){
             }
             nextLetter = 0
         }else{
-            document.querySelector('#result').textContent = "Ça mancque de lettres par ici.."
+            document.querySelector('#result').textContent = "Ça manque de lettres par ici.."
         }
     }else if(event.key.match(/^[a-zA-ZÀ-ÿ]$/)){
-        if(document.querySelector('#result').textContent === "Ça mancque de lettres par ici.."){
+        if(document.querySelector('#result').textContent === "Ça manque de lettres par ici.."){
             document.querySelector('#result').textContent = ""
         }
         for(let i=0; i<rightGuessString.length; i++){
