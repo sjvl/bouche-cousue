@@ -57,10 +57,14 @@ document.addEventListener('keyup', function(event){
                 }
             }
             if(testword.join('') === rightGuessArray.join('')){
-                document.querySelector('#result').textContent = "YOU WON!"
+                document.querySelector('#result').textContent = "ET C'EST GAGNÉ!"
+                let audio = new Audio("win.mp3");
+                audio.play();
                 return
             }else if(document.querySelectorAll('.tested').length === rightGuessString.length*nbrGuesses){
-                document.querySelector('#result').textContent = "GAME OVER"
+                document.querySelector('#result').textContent = "C'EST PERDU!"
+                let audio = new Audio("loose.mp3");
+                audio.play();
                 return
             }
             nextLetter = 0
