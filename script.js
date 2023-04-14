@@ -57,12 +57,12 @@ document.addEventListener('keyup', function(event){
                 }
             }
             if(testword.join('') === rightGuessArray.join('')){
-                document.querySelector('#result').textContent = "ET C'EST GAGNÉ!"
+                document.querySelector('#result').textContent = "ET C’EST GAGNÉ!"
                 let audio = new Audio("win.mp3");
                 audio.play();
                 return
             }else if(document.querySelectorAll('.tested').length === rightGuessString.length*nbrGuesses){
-                document.querySelector('#result').textContent = "C'EST PERDU!"
+                document.querySelector('#result').textContent = "OH NON.."
                 let audio = new Audio("loose.mp3");
                 audio.play();
                 return
@@ -72,7 +72,7 @@ document.addEventListener('keyup', function(event){
             document.querySelector('#result').textContent = "Not enough letters !"
         }
     }else if(event.key.match(/^[a-zA-ZÀ-ÿ]$/)){
-        if(document.querySelector('#result').textContent === "Not enough letters !"){
+        if(document.querySelector('#result').textContent === "Ça mancque de lettres par ici.."){
             document.querySelector('#result').textContent = ""
         }
         for(let i=0; i<rightGuessString.length; i++){
