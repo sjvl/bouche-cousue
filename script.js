@@ -7,7 +7,7 @@ let rightGuessString = '';
 //init GAME board
 let board = document.querySelector('#game-board');
 
-fetch("https://trouve-mot.fr/api/daily")
+fetch("https://trouve-mot.fr/api/random")
     .then(response => response.json())
     .then(data => {
         if (!data) return;
