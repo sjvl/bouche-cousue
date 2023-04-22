@@ -37,6 +37,11 @@ body {
 	cursor: pointer;
 	color: white;
 }
+#newGame:hover {
+	background-color: rgb(220, 220, 220);
+    color: #000000;
+    transition-duration: 1s;
+}
 
 #game-board {
 	display: flex;
@@ -77,12 +82,19 @@ body {
 }
 
 .loose {
-	background-color: rgb(210, 23, 23);
-	color: white;
+	border: 3px solid rgb(178, 178, 178);
+	background-color: rgb(255, 255, 255);
+	color: rgb(178, 178, 178);
 }
 
 .near {
+	border-radius: 100%;
 	background-color: rgb(245, 198, 11);
+	color: rgb(255, 255, 255);
+}
+
+.invalid {
+	background-color: rgb(0, 0, 0);
 	color: rgb(255, 255, 255);
 }
 
