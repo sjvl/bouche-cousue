@@ -106,3 +106,18 @@ body {
 #divResult {
 	text-align: center;
 }
+
+.maskInput {
+	overflow: hidden; 
+	outline: none;
+	height: 1px;
+	width: 1px;
+}
+
+#mytext {
+	color: white;
+	text-decoration: none;
+	border: 0px;
+	outline: none;
+	cursor: none;
+}
