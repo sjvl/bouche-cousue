@@ -38,7 +38,7 @@ let string = '';
 let eventKey = '';
 document.getElementById("mytext").addEventListener('keyup', function (event) {
     if(this.value.length <= rightGuessString.length){
-        string = this.value
+        string = this.value.toLowerCase()
         eventKey = event.key
 
         /// rentrer les lettres

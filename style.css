@@ -120,4 +120,9 @@ body {
 	border: 0px;
 	outline: none;
 	cursor: none;
+	touch-action: none;
+}
+
+input {
+	touch-action: none;
 }
