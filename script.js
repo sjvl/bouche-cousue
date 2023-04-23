@@ -214,5 +214,4 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
     
 
 // TO-DO
-// gérer les accent circonflexes
-// gérer un clavier mobile
+// version mobile

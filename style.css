@@ -111,7 +111,7 @@ body {
 	overflow: hidden; 
 	outline: none;
 	height: 1px;
-	width: 1px;
+	width: 100vw;
 }
 
 #mytext {
