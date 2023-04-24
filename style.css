@@ -24,7 +24,8 @@ body {
 .smallSection {
 	text-align: center;
 	width: 25%;
-	font-size: 16px;
+	font-size: 20px;
+	font-weight: 500;
 }
 
 #newGame {
@@ -33,11 +34,29 @@ body {
 	border: 1px #8a8a8a solid;
 	background-color: black;
 	border-radius: 4px;
-	font-weight: 600;
+	font-size: 20px;
+	font-weight: 500;
 	cursor: pointer;
 	color: white;
 }
 #newGame:hover {
+	background-color: rgb(220, 220, 220);
+    color: #000000;
+    transition-duration: 1s;
+}
+
+#launchGame {
+	width: 200px;
+	height: 40px;
+	border: 1px #8a8a8a solid;
+	background-color: black;
+	border-radius: 4px;
+	font-size: 20px;
+	font-weight: 500;
+	cursor: pointer;
+	color: white;
+}
+#launchGame:hover {
 	background-color: rgb(220, 220, 220);
     color: #000000;
     transition-duration: 1s;
@@ -61,6 +80,25 @@ body {
 	font-size: 40px;
 	text-transform: uppercase;
 	font-weight: 700;
+}
+
+.rules-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 608px;
+	height: 608px;
+	border: 3px solid gray;
+	margin: 2px;
+	padding: 20px;
+	font-size: 30px;
+	font-weight: 500;
+}
+
+p {
+	text-align: center;
+	margin: 6px;
 }
 
 .letter-row {

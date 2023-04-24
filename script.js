@@ -11,6 +11,29 @@ let rightGuessString = '';
 const board = document.querySelector('#game-board');
 const date = new Date()
 
+//generare rules board
+document.querySelector('#gameId').textContent = ''
+document.querySelector('#newGame').style.display = "none"
+board.innerHTML = `
+<div class="rules-box">
+    <p>Bonjour, je suis un jeu 👋</p>
+    <p>Je vous propose chaque jour un mot à deviner que je pioche au hasard dans le dictionnaire. En appuyant sur Entrée, vérifiez si vos lettres sont bonnes, à replacer ou mauvaises.</p>
+    <p> </p>
+    <div class="letter-row">
+        <div class="letter-box won">A</div >
+        <div class="letter-box near">B</div >
+        <div class="letter-box loose">C</div >
+    </div>
+    <p> </p>
+    <p>Attention, un Ê n'est pas un É ou un Ë et encore moins un E! Bref, vous l’aurez compris chaque caractère compte...</p>
+    <p>Bonne partie et à demain j’espère!</p>
+    <p> </p>
+    <button id="launchGame">Lancer la partie</button>
+</div>`
+
+document.querySelector('#launchGame').addEventListener('click', function(){
+
+board.innerHTML = ''
 
 //un mot par jour
 document.querySelector('#gameId').textContent = moment(date).format('DD/MM/YYYY')
@@ -20,6 +43,12 @@ let randomindex = Math.floor( ( x - Math.floor(x) ) * dico.length );
 rightGuessString = dico[randomindex];
 //console.log(rightGuessString)
 
+
+
+document.querySelector('#newGame').textContent = 'Nouvelle chance ?'
+document.querySelector('#newGame').style.display = "block"
+
+
 //generate game board
 for (let i = 0; i < nbrGuesses; i++) {
     board.innerHTML += `<div class="letter-row"></div>`;
@@ -28,9 +57,16 @@ for (let i = 0; i < nbrGuesses; i++) {
     }
 }
 
+
 /// nouvelle chance
 document.querySelector('#newGame').addEventListener('click', function(){
-    window.location.reload()
+    board.innerHTML = ''
+    for (let i = 0; i < nbrGuesses; i++) {
+        board.innerHTML += `<div class="letter-row"></div>`;
+        for (let j = 0; j < rightGuessString.length; j++) {
+            document.querySelectorAll('.letter-row')[i].innerHTML += `<div class="letter-box"></div >`;
+        }
+    }
 })
 
 ///GAME
@@ -143,7 +179,7 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
     }
     //game over
     if(document.querySelectorAll('.tested').length === rightGuessString.length*nbrGuesses){
-        document.querySelector('#title').textContent = "game over"
+        document.querySelector('#title').textContent = "c’est perdu"
 
         let gameOver = document.querySelectorAll('.tested')
         const sleep = (time) => {
@@ -210,8 +246,7 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
         audio.play();
     }
 });
-
-    
+})
 
 // TO-DO
-// version mobile
+// scoring
