@@ -31,7 +31,11 @@ board.innerHTML = `
     <button id="launchGame">Lancer la partie</button>
 </div>`
 
-document.querySelector('#launchGame').addEventListener('click', function(){
+document.querySelector('#launchGame').addEventListener('click', function () { game() })
+
+
+function game(){
+//document.removeEventListener('keydown',{ capture: false })
 
 board.innerHTML = ''
 
@@ -98,7 +102,13 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
                             previous[i].className += " won"
                         }
 
-                        document.querySelector('#title').textContent = `motus!`
+                        document.querySelector('#title').textContent = `motus`
+                        setTimeout(() => {
+                            document.querySelector('#title').textContent = `et`
+                        }, 2000);
+                        setTimeout(() => {
+                            document.querySelector('#title').textContent = `bouche cousue`
+                        }, 3000);
 
                         const sleep = (time) => {
                             return new Promise((resolve) => setTimeout(resolve, time))
@@ -107,19 +117,19 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
                             for (let i = 0; i < rightGuessString.length; i++) {
                                 await sleep(200)
                                 setTimeout(() => {
-                                    previous[i].className = "letter-box filled-box tested loose"
+                                    previous[i].className = "letter-box filled-box tested near"
                                 }, 200);
                                 setTimeout(() => {
                                     previous[i].className = "letter-box filled-box tested won"
                                 }, 400);
                                 setTimeout(() => {
-                                    previous[i].className = "letter-box filled-box tested loose"
+                                    previous[i].className = "letter-box filled-box tested near"
                                 }, 600);
                                 setTimeout(() => {
                                     previous[i].className = "letter-box filled-box tested won"
                                 }, 800);
                                 setTimeout(() => {
-                                    previous[i].className = "letter-box filled-box tested loose"
+                                    previous[i].className = "letter-box filled-box tested near"
                                 }, 1000);
                                 setTimeout(() => {
                                     previous[i].className = "letter-box filled-box tested won"
@@ -246,7 +256,7 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
         audio.play();
     }
 });
-})
+}
 
 // TO-DO
 // scoring
