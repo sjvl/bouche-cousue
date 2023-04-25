@@ -169,7 +169,7 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
                     }
                     document.querySelector('#title').textContent = `c'est quoi ce mot?`
                     setTimeout(() => {
-                        document.querySelector('#title').textContent = 'bouche cousue...'
+                        document.querySelector('#title').textContent = 'bouche cousue'
                     }, 2000);
                 }
 
@@ -177,7 +177,7 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
             }else{
                 document.querySelector('#title').textContent = `on a dit ${rightGuessString.length} lettres!`
                 setTimeout(() => {
-                    document.querySelector('#title').textContent = 'bouche cousue...'
+                    document.querySelector('#title').textContent = 'bouche cousue'
                 }, 2000);
             }
         }
