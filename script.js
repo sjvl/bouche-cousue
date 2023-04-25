@@ -1,18 +1,11 @@
-//cacher l'input avec autofocus
-document.getElementById("mytext").focus();
-document.addEventListener('click', () => {
-    document.getElementById("mytext").focus();
-})
-
-// Globals
+/// Globals
 let nbrGuesses = 6;
 let nextLetter = 0;
 let rightGuessString = '';
 const board = document.querySelector('#game-board');
 const date = new Date()
 
-//generare rules board
-document.querySelector('#gameId').textContent = ''
+/// Generare rules screen
 document.querySelector('#newGame').style.display = "none"
 board.innerHTML = `
 <div class="rules-box">
@@ -30,12 +23,26 @@ board.innerHTML = `
     <p> </p>
     <button id="launchGame">Lancer la partie</button>
 </div>`
-
+function closeRules(event) {
+    if(event.key === 'Enter' || event.key === 'Escape' ) {
+        document.removeEventListener('keyup', closeRules);
+        game()
+    }
+}
+document.addEventListener('keyup', closeRules);
 document.querySelector('#launchGame').addEventListener('click', function () { game() })
+///
 
 
+/// The game
 function game(){
-//document.removeEventListener('keydown',{ capture: false })
+document.querySelector('#trick').innerHTML = '<input id="mytext" spellcheck="false" type="text">'
+
+//cacher l'input avec autofocus
+document.getElementById("mytext").focus();
+document.addEventListener('click', () => {
+    document.getElementById("mytext").focus();
+})
 
 board.innerHTML = ''
 
@@ -64,13 +71,16 @@ for (let i = 0; i < nbrGuesses; i++) {
 
 /// nouvelle chance
 document.querySelector('#newGame').addEventListener('click', function(){
+    document.getElementById("mytext").remove()
     board.innerHTML = ''
+    game()
+    /*
     for (let i = 0; i < nbrGuesses; i++) {
         board.innerHTML += `<div class="letter-row"></div>`;
         for (let j = 0; j < rightGuessString.length; j++) {
             document.querySelectorAll('.letter-row')[i].innerHTML += `<div class="letter-box"></div >`;
         }
-    }
+    }*/
 })
 
 ///GAME
@@ -140,6 +150,8 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
         
                         let audio = new Audio("sound/win.mp3");
                         audio.play();
+
+                        document.getElementById("mytext").remove()
 
                     /// test des lettres
                     }else{
@@ -254,6 +266,8 @@ document.getElementById("mytext").addEventListener('keyup', function (event) {
 
         let audio = new Audio("sound/loose.mp3");
         audio.play();
+
+        document.getElementById("mytext").remove()
     }
 });
 }
