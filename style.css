@@ -123,18 +123,18 @@ p {
 	font-weight: bold;
 }
 
-.won {
+.good {
 	background-color: #DF0228;
 	background: radial-gradient(#ec0e33, #bc001f);
 	color: white;
 }
 
-.loose {
+.absent {
 	background-color: rgb(255, 255, 255);
 	color: rgb(178, 178, 178);
 }
 
-.near {
+.related {
 	border-radius: 100%;
 	background-color: #F7B604;
 	background: radial-gradient(#ffc934, #c38f00);
