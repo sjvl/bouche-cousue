@@ -71,16 +71,8 @@ for (let i = 0; i < nbrGuesses; i++) {
 
 /// nouvelle chance
 document.querySelector('#newGame').addEventListener('click', function(){
-    document.getElementById("mytext").remove()
-    board.innerHTML = ''
+    if(document.getElementById("mytext")) document.getElementById("mytext").remove()
     game()
-    /*
-    for (let i = 0; i < nbrGuesses; i++) {
-        board.innerHTML += `<div class="letter-row"></div>`;
-        for (let j = 0; j < rightGuessString.length; j++) {
-            document.querySelectorAll('.letter-row')[i].innerHTML += `<div class="letter-box"></div >`;
-        }
-    }*/
 })
 
 ///GAME
