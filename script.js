@@ -197,6 +197,9 @@ function game(){
             document.querySelector('#title').textContent = "c’est perdu"
 
             let gameOver = document.querySelectorAll('.tested')
+            const sleep = (time) => {
+                return new Promise((resolve) => setTimeout(resolve, time))
+            }
             const looseAnimation = async () => {
                 for (let i = 0; i < gameOver.length; i++) {
                     await sleep(30)
