@@ -14,15 +14,6 @@ body {
 	height: 8vh;
 }
 
-#container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 90vh;
-}
-
 #title {
 	font-family: 'Roboto Slab', serif;
 	text-align: center;
@@ -80,6 +71,7 @@ body {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin-top: 10px;
 }
 
 .letter-box {
@@ -97,6 +89,7 @@ body {
 }
 
 .rules-box {
+	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
